@@ -1,6 +1,5 @@
 package Persons;
 
-import Persons.Worker;
 
 import java.time.LocalDate;
 

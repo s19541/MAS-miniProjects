@@ -30,4 +30,7 @@ public class Match {
             System.out.println(player.getFirstName() + " " + player.getLastName());
         }
     }
+    public static void changeMaxSupportersNumber(int newNumber){
+        maxSupportersNumber = newNumber;
+    }
 }

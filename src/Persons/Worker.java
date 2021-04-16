@@ -5,11 +5,12 @@ import Persons.Person;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.LocalDate;;
 
 public class Worker extends Person {
     float salary;
+    float bonus = 0;
+    float totalSalary;
     LocalDate dateOfEmployment;
     public Worker(){
         super();
@@ -18,6 +19,12 @@ public class Worker extends Person {
         super(phoneNumber,firstName,lastName);
         this.salary = salary;
         this.dateOfEmployment = dateOfEmployment;
+        this.totalSalary = salary;
+    }
+
+    public void setBonus(float bonus) {
+        this.bonus = bonus;
+        totalSalary += bonus;
     }
 
     @Override
