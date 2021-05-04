@@ -5,7 +5,7 @@ import Persons.Person;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.time.LocalDate;;
+import java.time.LocalDate;
 
 public class Worker extends Person {
     float salary;
@@ -23,6 +23,7 @@ public class Worker extends Person {
     }
 
     public void setBonus(float bonus) {
+        totalSalary -= this.bonus;
         this.bonus = bonus;
         totalSalary += bonus;
     }
@@ -47,5 +48,9 @@ public class Worker extends Person {
                 ", salary=" + salary +
                 ", dateOfEmployment=" + dateOfEmployment +
                 '}';
+    }
+
+    public float getTotalSalary() {
+        return totalSalary;
     }
 }

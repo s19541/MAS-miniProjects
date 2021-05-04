@@ -1,10 +1,11 @@
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Pitch {
     float surface;
     String address;
-    List<Training> trainings = new ArrayList<>();
+    private List<Training> trainings = new ArrayList<>();
 
     public Pitch(float surface, String address){
         this.surface=surface;
@@ -13,9 +14,11 @@ public class Pitch {
     public void addTraining(Training training){
         if(!trainings.contains(training)) {
             trainings.add(training);
-
             training.setPitch(this);
         }
+    }
+    public void removeTraining(Training training){
+        trainings.remove(training);
     }
 
     @Override

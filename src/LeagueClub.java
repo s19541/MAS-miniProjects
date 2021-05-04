@@ -19,10 +19,6 @@ public class LeagueClub {
     public LeagueClub(League league, Club club){
         this.league = league;
         this.club = club;
-        if(!league.leagueClubs.contains(this))
-            league.leagueClubs.add(this);
-        if(!club.leagueClubs.contains(this))
-            club.leagueClubs.add(this);
         extent.add(this);
     }
     public static boolean exist(League league, Club club){

@@ -4,7 +4,7 @@ import java.util.List;
 public class League {
     String name;
     List<String> sponsors;
-    List<LeagueClub> leagueClubs = new ArrayList<>();
+    private List<LeagueClub> leagueClubs = new ArrayList<>();
 
     public League(String name, List<String> sponsors){
         this.name = name;
@@ -15,8 +15,17 @@ public class League {
             System.out.println("Liga zawiera już dany klub");
         }
         else{
-        leagueClubs.add(new LeagueClub(this,club));
+            LeagueClub leagueClub = new LeagueClub(this,club);
+        leagueClubs.add(leagueClub);
+        club.addLeague(leagueClub);
             System.out.println("Pomyslnie dodano klub");
         }
+    }
+    public void addClub(LeagueClub leagueClub){
+        if(!leagueClubs.contains(leagueClub))
+            leagueClubs.add(leagueClub);
+    }
+    public void showClubs(){
+        System.out.println(leagueClubs);
     }
 }

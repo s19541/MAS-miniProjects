@@ -8,10 +8,10 @@ public class Training {
     }
     public void setPitch(Pitch pitch){
         if(this.pitch!=null && this.pitch!=pitch){
-            this.pitch.trainings.remove(this);
+            pitch.removeTraining(this);
         }
-            this.pitch = pitch;
-            pitch.addTraining(this);
+        this.pitch = pitch;
+        pitch.addTraining(this);
     }
 
     @Override

@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class Song {
     String title;
-    List<Artist> artists = new ArrayList<>();
+    private List<Artist> artists = new ArrayList<>();
     private List<Verse> verses = new ArrayList<>();
     private static Set<Verse> allVerses = new HashSet<>();
     private static List<Song> extent = new ArrayList<>();
@@ -19,8 +19,10 @@ public class Song {
         extent.add(this);
     }
     public void addArtist(Artist artist){
-        if(!artists.contains(artist))
+        if(!artists.contains(artist)) {
             artists.add(artist);
+            artist.addSongQualif(this);
+        }
     }
     public void addVerse(Verse verse) throws Exception {
         if(!verses.contains(verse)) {

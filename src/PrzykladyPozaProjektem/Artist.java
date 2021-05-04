@@ -10,7 +10,6 @@ public class Artist {
     public void addSongQualif(Song song) {
         if (!songsQualif.containsKey(song.title)) {
             songsQualif.put(song.title, song);
-
             song.addArtist(this);
         }
     }
@@ -19,5 +18,9 @@ public class Artist {
             throw new Exception("Unable to find a song: " + title);
         }
         return songsQualif.get(title);
+    }
+
+    public void showSongs(){
+        System.out.println(songsQualif);
     }
 }

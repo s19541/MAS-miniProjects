@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Club {
     String name;
-    List<LeagueClub> leagueClubs = new ArrayList<>();
+    private List<LeagueClub> leagueClubs = new ArrayList<>();
     public Club(String name){
         this.name=name;
     }
@@ -12,8 +12,14 @@ public class Club {
             System.out.println("Klub już jest w danej lidze");
         }
         else{
-            leagueClubs.add(new LeagueClub(league, this));
+            LeagueClub leagueClub = new LeagueClub(league, this);
+            leagueClubs.add(leagueClub);
+            league.addClub(leagueClub);
             System.out.println("Pomyslnie dodano lige");
         }
+    }
+    public void addLeague(LeagueClub leagueClub){
+        if(!leagueClubs.contains(leagueClub))
+            leagueClubs.add(leagueClub);
     }
 }
